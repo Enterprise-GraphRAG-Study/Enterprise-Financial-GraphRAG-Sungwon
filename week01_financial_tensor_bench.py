@@ -9,7 +9,7 @@ def week1_mission():
     print(f" Device: {device} (M4 Max 128GB RAM ready)")
 
     # 2. 금융 데이터셋 로드 (SEC 10-K 기반)
-    print("📥 Loading Sujet Financial RAG Dataset...")
+    print(" Loading Sujet Financial RAG Dataset...")
     try:
         dataset = load_dataset("sujet-ai/Sujet-Financial-RAG-EN-Dataset", split="train")
         sample_context = dataset[0]['context'] 
