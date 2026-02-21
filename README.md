@@ -111,7 +111,7 @@ python week01_main.py
 
 ## 🧑‍💻 Author
 
-**Seongwon Im**
+**Sungwon Lim**
 
 * Study Leader at **Enterprise-GraphRAG-Study**
 * Focus: AI Engineering, Financial Intelligence, Knowledge Graphs
