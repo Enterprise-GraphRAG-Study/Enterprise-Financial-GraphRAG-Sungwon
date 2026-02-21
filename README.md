@@ -33,29 +33,40 @@ To ensure enterprise-level reasoning, this project utilizes high-fidelity financ
 - **Content:** Complex financial statements, risk factors, and business overviews of publicly traded companies.
 - **Scale:** ~98,590 rows of structured financial context.
 
-### **Why This Dataset?**
-1. **High-Stakes Reasoning:** Financial 10-K reports contain dense, numeric, and interconnected information that requires more than simple semantic search.
-2. **Entity-Rich:** Perfect for building **Knowledge Graphs** as it involves multiple entities (Companies, Subsidiaries, Metrics, Dates).
-3. **Long-Context Challenges:** The reports are lengthy and formal, making them the ideal stress test for the **128GB Unified Memory** when processing large-batch embeddings.
-
 ---
 
 ## 📈 Performance Benchmark (Week 1)
 
 | Task | Target Device | Metric | Result |
 | :--- | :--- | :--- | :--- |
-| **Tensor Embedding** | Apple M4 Max (MPS) | Latency | **~1007.34 ms** (Cold Start) |
-| **Data Throughput** | Unified Memory | Rate | **1.46 MB/s** |
+| **Tensor Embedding** | Apple M4 Max (MPS) | Latency | **40.57 ms** (Optimized) |
+| **Batch Size** | 100 Samples | Hardware | Unified Memory |
 | **Dataset Scale** | Sujet Financial RAG | Samples | 98,590 rows |
 
 ### **Execution Proof**
 ![M4 Max Week 1 Benchmark Result](./assets/benchmark_result.png)
 
-> **Technical Note:** The latency recorded includes initial MPS kernel warm-up and model loading. In-memory processing of subsequent batches shows near-instantaneous inference.
+> **Technical Note:** The latency has been significantly reduced from the initial cold start (~1000ms) to **40.57ms** through modular architecture optimization and MPS kernel warm-up.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Project Structure & Tech Stack
+
+### **Modular Architecture**
+Following the enterprise collaboration standard, the source code is modularized into the `src/` directory.
+
+```text
+.
+├── src/               # Core logic modules
+│   ├── accelerator.py # Device acceleration logic (MPS/CUDA)
+│   └── data_loader.py # Financial dataset loading utilities
+├── assets/            # Benchmark results & visualization
+├── requirements.txt   # Project dependencies
+└── week01_main.py     # Execution entry point
+
+```
+
+### **Tech Stack**
 
 * **Frameworks:** PyTorch (MPS Accelerated), Hugging Face Transformers
 * **Graph DB:** Neo4j (Planned)
@@ -71,17 +82,17 @@ To ensure enterprise-level reasoning, this project utilizes high-fidelity financ
 ```bash
 # Create virtual environment
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # Windows: .\venv\Scripts\activate
 
 # Install dependencies
-pip install torch transformers datasets pandas
+pip install -r requirements.txt
 
 ```
 
 ### **2. Running Week 1 Benchmark**
 
 ```bash
-python week01_financial_tensor_bench.py
+python week01_main.py
 
 ```
 
@@ -105,4 +116,3 @@ python week01_financial_tensor_bench.py
 * Study Leader at **Enterprise-GraphRAG-Study**
 * Focus: AI Engineering, Financial Intelligence, Knowledge Graphs
 
----
