@@ -33,7 +33,7 @@ The **128GB Unified Memory** architecture provides a significant edge in buildin
 | **Dataset Scale** | Sujet Financial RAG | Samples | 98,590 rows |
 
 ### **Execution Proof**
-![M4 Max Week 1 Benchmark Result](<img width="306" height="65" alt="Image" src="https://github.com/user-attachments/assets/b0bbf468-e0d3-4617-986b-c98d1dc73426" />)
+![M4 Max Week 1 Benchmark Result](./assets/benchmark_result.png)
 
 > **Technical Note:** The latency recorded includes initial MPS kernel warm-up and model loading. In-memory processing of subsequent batches shows near-instantaneous inference.
 
