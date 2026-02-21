@@ -24,6 +24,22 @@ The **128GB Unified Memory** architecture provides a significant edge in buildin
 
 ---
 
+## 📊 Data Source: Financial Intelligence (SEC 10-K)
+
+To ensure enterprise-level reasoning, this project utilizes high-fidelity financial datasets.
+
+### **Dataset: [Sujet-Financial-RAG-EN-Dataset](https://huggingface.co/datasets/sujet-ai/Sujet-Financial-RAG-EN-Dataset)**
+- **Source:** U.S. Securities and Exchange Commission (SEC) 10-K Annual Reports.
+- **Content:** Complex financial statements, risk factors, and business overviews of publicly traded companies.
+- **Scale:** ~98,590 rows of structured financial context.
+
+### **Why This Dataset?**
+1. **High-Stakes Reasoning:** Financial 10-K reports contain dense, numeric, and interconnected information that requires more than simple semantic search.
+2. **Entity-Rich:** Perfect for building **Knowledge Graphs** as it involves multiple entities (Companies, Subsidiaries, Metrics, Dates).
+3. **Long-Context Challenges:** The reports are lengthy and formal, making them the ideal stress test for the **128GB Unified Memory** when processing large-batch embeddings.
+
+---
+
 ## 📈 Performance Benchmark (Week 1)
 
 | Task | Target Device | Metric | Result |
