@@ -1,9 +1,10 @@
 import torch
 
+
 def get_device() -> torch.device:
     """
     Checks for available hardware acceleration and returns the best device.
-    
+
     Returns:
         torch.device: The detected device (mps, cuda, or cpu).
     """
@@ -13,6 +14,6 @@ def get_device() -> torch.device:
         device = torch.device("cuda")
     else:
         device = torch.device("cpu")
-        
+
     print(f"Using device: {device}")
     return device
