@@ -1,5 +1,6 @@
 from datasets import load_dataset, DatasetDict
 
+
 def load_financial_dataset(dataset_name: str) -> DatasetDict:
     """
     Loads a financial dataset from Hugging Face.
